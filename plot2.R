@@ -18,12 +18,12 @@ data<-subset(data, Date=="2007-02-01" | Date=="2007-02-02")
 data$Time<-strptime(paste(as.character(data$Date), data$Time, sep=" "), "%Y-%m-%d %H:%M:%S")
 
 #Plotting the histogram
-dev.off() # To assure default par settings
+#Creating PNG
+png("plot2.png", width = 480, height = 480)
 
 # Plotting the graphic
 Sys.setlocale("LC_TIME", "English") # To print days in English
 with(data, plot(Time, Global_active_power, type="l", ylab="Global Activer Power (kilowatts)"))
 
-# Creating the PNG file
-dev.copy(png, file="plot2.png")
+
 dev.off()

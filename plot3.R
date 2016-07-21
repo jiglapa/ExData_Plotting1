@@ -22,7 +22,7 @@ data$Time<-strptime(paste(as.character(data$Date), data$Time, sep=" "), "%Y-%m-%
 Sys.setlocale("LC_TIME", "English") # To force days in  English
 
 #Creating PNG
-png("plot4.png", width = 480, height = 480)
+png("plot3.png", width = 480, height = 480)
 with(data, plot(Time, Sub_metering_1, type="n", xlab="", ylab="Energy sub metering"))
 with(data, lines(Time, Sub_metering_1))
 with(data, lines(Time, Sub_metering_2, col="red"))
